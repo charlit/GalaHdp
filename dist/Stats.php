@@ -1,3 +1,6 @@
+<?php 
+require("fpdf/fpdf.php");
+?>
 <html>
 <table id="tableau" class="table" >
 
@@ -101,7 +104,7 @@ $columns = $result->fetch();
 $ressgl = $columns['ressgl'];
 
 echo' 
-		<th id="nombre">'.$ressgl.'</th>
+		<th>'.$ressgl.'</th>
 		<th>'.$prixsgl.'</th>'
 ?>
 <?php
@@ -233,7 +236,7 @@ $columns = $result->fetch();
 $enfantp = $columns['enfantp']; 
 
 echo' 
-		<th id="nombre">'.$enfantp.'</t>
+		<th>'.$enfantp.'</t>
 		<th>'.$prixenfantp.'</th>'
 ?>
 <?php
@@ -251,8 +254,31 @@ echo'
 ?>
 
 <script type="text/javascript"> 
-var tab = document.getElementById("tableau").rows[2].innerHTML; //l'array est stocké dans une variable
-var t =   document.getElementById('nombre').innerHTML;
-console.log(t);
+
+var a = document.getElementById("tableau").rows; 
+var l = a.length;
+var c = a[13].cells[1].innerHTML;
+var tab = new Array();
+for(var i=7; i<13; i++)
+	{	
+		var c = a[i].cells[1].innerHTML;
+		tab.push(c);
+		console.log(c);
+	}
+	console.log(tab);
+	var tot = 0;
+	for(var j=0; i<tab.length; j++)
+	{	
+		tot = tab[j] + tot;
+		console.log(tot);
+	}
+	console.log(tab.sum());
+	
+// var tab = document.getElementById("tableau").rows[2].innerHTML; //l'array est stocké dans une variable
+// var t =   document.getElementById('tableau').innerHTML;
+
+
 </script> 
+
+    
 </html>
