@@ -150,6 +150,10 @@ function verifPax()
     <input class="form-control" name="nom" type="text">
   </div>
   <div class="form-group">      
+    <label class="">Table</label>
+    <input class="form-control" name="numTable" type="text">
+  </div>
+  <div class="form-group">      
     <label class="">Telephone</label>
     <input class="form-control" name="telephone" type="text">
   </div>

@@ -16,11 +16,13 @@ require('configuration.php');
 		<div class="form-group">
 			<input class="btn btn-default" type="submit" value="Supprimer" /><br/><br/>
 		</div>
-		</div>		
-		<div class="col-md-3"></div>
+		</div>
+		</form>
+<form action="imprimer.php" method="post">
+	<input class="btn btn-default" type="submit" value="Imprimer" /><br/><br/>
+</form>		
+<div class="col-md-3"></div>
 </div>
-
-</form>
 </div>
 
 <div class="container">
@@ -30,7 +32,7 @@ require('configuration.php');
   
 
 <?php
-include "Gala.php";
+include "ModifGala.php";
 ?>
 </div>
 <div class="col-md-1"></div>

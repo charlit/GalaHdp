@@ -1,11 +1,14 @@
 <?php include "Menu.php"; ?>
 <?php 
-// Mon fichier de connection à la BDD en PDO
+// Mon fichier de connection ï¿½ la BDD en PDO
 require('configuration.php');
 
 	
 if(!empty($_POST['nom'])) $nom=$_POST['nom'];
 else $nom="";
+
+if(isset($_POST['numTable'])) $numTable=$_POST['numTable'];
+else $numTable="";
 
 if(isset($_POST['telephone'])) $telephone=$_POST['telephone'];
 else $telephone="";
@@ -33,8 +36,8 @@ else $enfantm="";
 if(isset($_POST['enfantp'])) $enfantp=$_POST['enfantp'];
 else $enfantp="";
 
-// on écrit la requête sql
-$result = $bdd->exec("INSERT INTO clients(idclients, nom, telephone) VALUES('', '$nom', '$telephone')");
+// on ï¿½crit la requï¿½te sql
+$result = $bdd->exec("INSERT INTO clients(idclients, nom, numTable, telephone) VALUES('', '$nom', '$numTable', '$telephone')");
 
 echo "\nPDO::errorCode(): ", $bdd->errorCode();
 
@@ -53,7 +56,7 @@ $arr = $bdd->exec("SELECT SUM(125*r.resdbl + 125*r.ressgl + 165*r.nonresident + 
 
 
 // $result =  $bdd->exec("INSERT INTO tarif(idtarif, idreservation) VALUES('$insertId', '$insertIdr')");
-// on insère les informations du formulaire dans la table
+// on insï¿½re les informations du formulaire dans la table
 try
 {
 $bdd->query($result);
@@ -63,7 +66,7 @@ catch (Exception $e)
 {
 die('Erreur : ' . $e->getMessage());
 }
-// on affiche le résultat pour le visiteur
+// on affiche le rï¿½sultat pour le visiteur
 echo '<font color="green"><b><center>Inscritpion valide !</center></b></font>';
 ?>
 <?php
